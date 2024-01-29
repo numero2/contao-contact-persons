@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+<file>
+<body>
+    <!-- LEGENDS -->
+    <trans-unit id="tl_module.contact_persons_legend">
+        <target>Ansprechpartner</target>
+    </trans-unit>
+    <!-- FIELDS -->
+    <trans-unit id="tl_module.contact_persons.0">
+        <target>Ansprechpartner</target>
+    </trans-unit>
+    <trans-unit id="tl_module.contact_persons.1">
+        <target>Bitte wählen Sie die Ansprechpartner aus, die angezeigt werden sollen. Sind keine Ausgewählt, werden sie Seiten-Einstellungen in den Kontaktpersonen verwendet.</target>
+    </trans-unit>
+    <trans-unit id="tl_module.contact_person_sorting.0">
+        <target>Sortierung</target>
+    </trans-unit>
+    <trans-unit id="tl_module.contact_person_sorting.1">
+        <target>Bitte geben Sie das Feld ein nachdem die Einträge sortiert werden soll.</target>
+    </trans-unit>
+    <trans-unit id="tl_module.contact_person_template.0">
+        <target>Ansprechpartner-Template</target>
+    </trans-unit>
+    <trans-unit id="tl_module.contact_person_template.1">
+        <target>Hier können Sie ein Ansprechpartner-Template auswählen.</target>
+    </trans-unit>
+    <!-- OPTIONS -->
+    <trans-unit id="tl_module.contact_person_sortings.asc">
+        <target>aufsteigend</target>
+    </trans-unit>
+    <trans-unit id="tl_module.contact_person_sortings.desc">
+        <target>absteigend</target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+<file>
+<body>
+    <!-- BACKEND -->
+    <trans-unit id="MOD.contactPersons.0">
+        <target>Ansprechpartner</target>
+    </trans-unit>
+    <trans-unit id="MOD.contactPersons.1">
+        <target>Ansprechpartner verwalte</target>
+    </trans-unit>
+    <!-- FRONTEND -->
+    <trans-unit id="FMD.contactPersons.0">
+        <target>Ansprechpartner</target>
+    </trans-unit>
+    <trans-unit id="FMD.contact_person_list.0">
+        <target>Ansprechpartner Liste</target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

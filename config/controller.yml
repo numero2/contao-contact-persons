@@ -1,0 +1,25 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    _instanceof:
+        Contao\CoreBundle\Framework\FrameworkAwareInterface:
+            calls:
+                - [setFramework, ['@contao.framework']]
+
+        Symfony\Bundle\FrameworkBundle\Controller\AbstractController:
+            calls:
+                - [setContainer, ['@Psr\Container\ContainerInterface']]
+
+
+    numero2\ContactPersonsBundle\Controller\ContentElement\ContactPersonController:
+        arguments:
+            - '@event_dispatcher'
+
+
+    numero2\ContactPersonsBundle\Controller\FrontendModule\ContactPersonListController:
+        arguments:
+            - '@event_dispatcher'
+            - '@contao.routing.response_context_accessor'
+            - '@contao.translation.translator'

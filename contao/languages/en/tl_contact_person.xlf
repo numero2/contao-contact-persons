@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+<file>
+<body>
+    <!-- ACTIONS -->
+    <trans-unit id="tl_contact_person.import.0">
+        <target>Importieren</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.import.1">
+        <target>Mehrere Codes auf einmal importieren</target>
+    </trans-unit>
+    <!-- LEGENDS -->
+    <trans-unit id="tl_contact_person.common_legend">
+        <target>Allgemein</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.source_legend">
+        <target>Bild</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.page_legend">
+        <target>Seiten</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.publish_legend">
+        <target>Veröffentlichung</target>
+    </trans-unit>
+    <!-- FIELDS -->
+    <trans-unit id="tl_contact_person.title.0">
+        <target>Titel</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.title.1">
+        <target>Bitte geben Sie den Titel ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.firstname.0">
+        <target>Vorname</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.firstname.1">
+        <target>Bitte geben Sie den Vornamen ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.lastname.0">
+        <target>Nachname</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.lastname.1">
+        <target>Bitte geben Sie den Nachnamen ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.position.0">
+        <target>Position</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.position.1">
+        <target>Bitte geben Sie die Position ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.phone.0">
+        <target>Telefonnummer</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.phone.1">
+        <target>Bitte geben Sie die Telefonnummer ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.fax.0">
+        <target>Faxnummer</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.fax.1">
+        <target>Bitte geben Sie die Faxnummer ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.email.0">
+        <target>E-Mail-Adresse</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.email.1">
+        <target>Bitte geben Sie eine gültige E-Mail-Adresse ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.singleSRC.0">
+        <target>Bild</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.singleSRC.1">
+        <target>Bitte wählen Sie ein Bild aus.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.pages.0">
+        <target>Seiten</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.pages.1">
+        <target>Bitte wählen Sie auf welchen Seiten diese Ansprechperson angezeigt werden soll.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.news.0">
+        <target>Nachrichten</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.news.1">
+        <target>Bitte wählen Sie bei welchen Nachrichten diese Ansprechperson angezeigt werden soll.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.events.0">
+        <target>Events</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.events.1">
+        <target>Bitte wählen Sie auf bei welchen Events diese Ansprechperson angezeigt werden soll.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.published.0">
+        <target>Veröffentlichen</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.published.1">
+        <target>Die Ansprechperson auf der Webseite anzeigen.</target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

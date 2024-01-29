@@ -1,0 +1,11 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<?php if( empty($this->contacts) ): ?>
+    <p class="empty"><?= $this->empty ?></p>
+<?php else: ?>
+    <?= implode('', $this->contacts); ?>
+<?php endif; ?>
+
+<?php $this->endblock(); ?>

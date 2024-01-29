@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+<file>
+<body>
+    <trans-unit id="CTE.contact_person.0">
+        <target>Ansprechpartner</target>
+    </trans-unit>
+    <trans-unit id="CTE.contact_person.1">
+        <target>Erzeugt ein Element zur Anzeige eines Ansprechpartners.</target>
+    </trans-unit>
+    <trans-unit id="MSC.contact_person_list.empty">
+        <target>Es wurden keine Ansprechpartner gefunden.</target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

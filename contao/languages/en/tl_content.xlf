@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+<file>
+<body>
+    <!-- LEGENDS -->
+    <trans-unit id="tl_content.contact_persons_legend">
+        <target>Ansprechpartner</target>
+    </trans-unit>
+    <!-- FIELDS -->
+    <trans-unit id="tl_content.contact_person.0">
+        <target>Ansprechpartner</target>
+    </trans-unit>
+    <trans-unit id="tl_content.contact_person.1">
+        <target>Bitte Wählen Sie den Ansprechpartner aus.</target>
+    </trans-unit>
+    <trans-unit id="tl_content.contact_person_template.0">
+        <target>Ansprechpartner-Template</target>
+    </trans-unit>
+    <trans-unit id="tl_content.contact_person_template.1">
+        <target>Hier können Sie ein Ansprechpartner-Template auswählen.</target>
+    </trans-unit>
+</body>
+</file>
+</xliff>
