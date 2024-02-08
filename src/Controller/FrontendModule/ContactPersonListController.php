@@ -70,10 +70,14 @@ class ContactPersonListController extends AbstractFrontendModuleController {
         $this->responseContextAccessor = $responseContextAccessor;
         $this->translator = $translator;
 
-        $this->supportedPageTypes = [
-            Event::class => CalendarEventsModel::getTable()
-        ,   NewsArticle::class => NewsModel::getTable()
-        ];
+        $this->supportedPageTypes = [];
+
+        if( class_exists(CalendarEventsModel::class) ) {
+            $this->supportedPageTypes[Event::class] = CalendarEventsModel::getTable();
+        }
+        if( class_exists(NewsModel::class) ) {
+            $this->supportedPageTypes[NewsArticle::class] = NewsModel::getTable();
+        }
     }
 
 
