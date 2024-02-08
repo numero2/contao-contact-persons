@@ -9,6 +9,18 @@
     <trans-unit id="tl_contact_person.import.1">
         <target>Mehrere Codes auf einmal importieren</target>
     </trans-unit>
+    <trans-unit id="tl_contact_person.edit">
+        <target>Ansprechpartner ID %s bearbeiten</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.delete">
+        <target>Ansprechpartner ID %s löschen</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.toggle">
+        <target>Ansprechpartner ID %s veröffentlichen/unveröffentlichen</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.show">
+        <target>Details des Ansprechpartner ID %s anzeigen</target>
+    </trans-unit>
     <!-- LEGENDS -->
     <trans-unit id="tl_contact_person.common_legend">
         <target>Allgemein</target>
@@ -75,25 +87,25 @@
         <target>Seiten</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.pages.1">
-        <target>Bitte wählen Sie auf welchen Seiten diese Ansprechperson angezeigt werden soll.</target>
+        <target>Bitte wählen Sie auf welchen Seiten diese Ansprechpartner angezeigt werden soll.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.news.0">
         <target>Nachrichten</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.news.1">
-        <target>Bitte wählen Sie bei welchen Nachrichten diese Ansprechperson angezeigt werden soll.</target>
+        <target>Bitte wählen Sie bei welchen Nachrichten diese Ansprechpartner angezeigt werden soll.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.events.0">
         <target>Events</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.events.1">
-        <target>Bitte wählen Sie auf bei welchen Events diese Ansprechperson angezeigt werden soll.</target>
+        <target>Bitte wählen Sie auf bei welchen Events diese Ansprechpartner angezeigt werden soll.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.published.0">
         <target>Veröffentlichen</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.published.1">
-        <target>Die Ansprechperson auf der Webseite anzeigen.</target>
+        <target>Die Ansprechpartner auf der Webseite anzeigen.</target>
     </trans-unit>
 </body>
 </file>

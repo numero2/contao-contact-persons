@@ -14,6 +14,7 @@ namespace numero2\ContactPersonsBundle\EventListener\DataContainer;
 
 use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\DataContainer;
+use Contao\Model;
 use Contao\StringUtil;
 use numero2\ContactPersonsBundle\ContactPersonRelPageModel;
 
@@ -41,6 +42,12 @@ class ContactPersonListener {
         $table = null;
         if( !empty($GLOBALS['TL_DCA'][$dc->table]['fields'][$dc->field]['foreignKey']) ) {
             $table = explode('.', $GLOBALS['TL_DCA'][$dc->table]['fields'][$dc->field]['foreignKey'], 2)[0];
+        }
+
+        $strClass = Model::getClassFromTable($table);
+        if( empty($strClass) || !class_exists($strClass) ) {
+            unset($GLOBALS['TL_DCA'][$dc->table]['fields'][$dc->field]);
+            return $value;
         }
 
         $relations = ContactPersonRelPageModel::findBy(['pid=? AND page_table=?'], [$pid, $table]);
