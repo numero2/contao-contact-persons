@@ -69,7 +69,9 @@ class ContactPersonParseListener {
 
             $figure = $figureBuilder->buildIfResourceExists();
 
-            $contact['singleSRCFigure'] = $figure->getLegacyTemplateData();
+            if( $figure ) {
+                $contact['singleSRCFigure'] = $figure->getLegacyTemplateData();
+            }
         }
 
         $event->setContactPerson($contact);
