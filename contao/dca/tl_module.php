@@ -16,7 +16,7 @@ use numero2\ContactPersonsBundle\ContactPersonModel;
 /**
  * Modify the palettes
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['contact_person_list'] = '{title_legend},name,headline,type;{contact_persons_legend},contact_persons;{config_legend},numberOfItems,contact_person_sorting;{image_legend:hide},imgSize;{template_legend:hide},contact_person_template,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['contact_person_list'] = '{title_legend},name,headline,type;{contact_persons_legend},contact_persons,contact_persons_inherit;{config_legend},numberOfItems,contact_person_sorting;{image_legend:hide},imgSize;{template_legend:hide},contact_person_template,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
 
 
 /**
@@ -29,6 +29,13 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['contact_persons'] = [
 ,   'eval'                  => ['multiple'=>true, 'fieldType'=>'checkbox', 'tl_class'=>'clr']
 ,   'sql'                   => "blob NULL"
 ,   'relation'              => ['type'=>'hasMany', 'load'=>'lazy']
+];
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['contact_persons_inherit'] = [
+    'exclude'               => true
+,   'inputType'             => 'checkbox'
+,   'eval'                  => ['tl_class'=>'clr w50']
+,   'sql'                   => "char(1) COLLATE ascii_bin NOT NULL default ''"
 ];
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['contact_person_sorting'] = [

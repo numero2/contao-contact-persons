@@ -13,6 +13,12 @@
     <trans-unit id="tl_module.contact_persons.1">
         <target>Bitte wählen Sie die Ansprechpartner aus, die angezeigt werden sollen. Sind keine Ausgewählt, werden sie Seiten-Einstellungen in den Kontaktpersonen verwendet.</target>
     </trans-unit>
+    <trans-unit id="tl_module.contact_persons_inherit.0">
+        <target>Ansprechpartner vererben</target>
+    </trans-unit>
+    <trans-unit id="tl_module.contact_persons_inherit.1">
+        <target>Bitte wählen Sie ob Ansprechpartner von darüber liegenden Seiten, verwendet werden sollen, sobald für die aktuelle Seite keine gefunden werden.</target>
+    </trans-unit>
     <trans-unit id="tl_module.contact_person_sorting.0">
         <target>Sortierung</target>
     </trans-unit>
