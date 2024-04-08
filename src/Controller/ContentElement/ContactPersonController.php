@@ -14,6 +14,7 @@ namespace numero2\ContactPersonsBundle\Controller\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\Routing\ScopeMatcher;
 use Contao\CoreBundle\ServiceAnnotation\ContentElement;
 use Contao\FrontendTemplate;
 use Contao\Template;
@@ -39,10 +40,16 @@ class ContactPersonController extends AbstractContentElementController {
      */
     private $eventDispatcher;
 
+    /**
+     * @var Contao\CoreBundle\Routing\ScopeMatcher
+     */
+    private $scopeMatcher;
 
-    public function __construct( EventDispatcherInterface $eventDispatcher ) {
+
+    public function __construct( EventDispatcherInterface $eventDispatcher, ScopeMatcher $scopeMatcher ) {
 
         $this->eventDispatcher = $eventDispatcher;
+        $this->scopeMatcher = $scopeMatcher;
     }
 
 
@@ -64,6 +71,10 @@ class ContactPersonController extends AbstractContentElementController {
         $this->eventDispatcher->dispatch($event, ContactPersonEvents::CONTACT_PERSON_PARSE);
 
         $contact = $event->getContactPerson();
+
+        if( $this->scopeMatcher->isBackendRequest($request) ) {
+            $model->contact_person_template = null;
+        }
 
         $contactTemplate = new FrontendTemplate($model->contact_person_template ?: 'contact_person_default');
         $contactTemplate->setData($contact);

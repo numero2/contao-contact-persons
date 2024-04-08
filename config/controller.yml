@@ -16,6 +16,7 @@ services:
     numero2\ContactPersonsBundle\Controller\ContentElement\ContactPersonController:
         arguments:
             - '@event_dispatcher'
+            - '@contao.routing.scope_matcher'
 
 
     numero2\ContactPersonsBundle\Controller\FrontendModule\ContactPersonListController:
