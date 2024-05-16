@@ -19,7 +19,7 @@ final class ContactPersonEvents {
     /**
      * The contao.contact_person_parse event is triggered during parsing a contact person entry.
      *
-     * @see numero2\SpreadsheetCatalogBundle\Event\DataParseEvent
+     * @see numero2\ContactPersonsBundle\Event\ContactPersonParseEvent
      */
     public const CONTACT_PERSON_PARSE = 'contao.contact_person_parse';
 }
