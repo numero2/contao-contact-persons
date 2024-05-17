@@ -18,3 +18,26 @@ Installation
 
 * Install via Contao Manager or Composer (`composer require numero2/contao-contact-persons`)
 * Run a database update via the Contao-Installtool or using the [contao:migrate](https://docs.contao.org/dev/reference/commands/) command.
+
+
+Events
+--
+
+If you want to extend the contact persons using your own fields you can use the `contao.contact_person_parse` event to modify all the data that will be used in the templates.
+
+```php
+// src/EventListener/ContactPersonParseListener.php
+namespace App\EventListener;
+
+use Contao\ContactPersonsBundle\Event\ContactPersonEvents;
+use Contao\ContactPersonsBundle\Event\ContactPersonParseEvent;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+#[AsEventListener(ContactPersonEvents::CONTACT_PERSON_PARSE)]
+class ContactPersonParseListener {
+
+    public function __invoke( ContactPersonEvents $event ): void {
+        // …
+    }
+}
+```
