@@ -29,14 +29,14 @@ If you want to extend the contact persons using your own fields you can use the 
 // src/EventListener/ContactPersonParseListener.php
 namespace App\EventListener;
 
-use Contao\ContactPersonsBundle\Event\ContactPersonEvents;
-use Contao\ContactPersonsBundle\Event\ContactPersonParseEvent;
+use numero2\ContactPersonsBundle\Event\ContactPersonEvents;
+use numero2\ContactPersonsBundle\Event\ContactPersonParseEvent;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
 #[AsEventListener(ContactPersonEvents::CONTACT_PERSON_PARSE)]
-class ContactPersonParseListener {
+class ContactPersonListener {
 
-    public function __invoke( ContactPersonEvents $event ): void {
+    public function __invoke( ContactPersonParseEvent $event ): void {
         // …
     }
 }
