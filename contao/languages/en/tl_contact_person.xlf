@@ -7,7 +7,7 @@
         <target>Importieren</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.import.1">
-        <target>Mehrere Codes auf einmal importieren</target>
+        <target>Mehrere Ansprechpartner auf einmal importieren</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.edit">
         <target>Ansprechpartner ID %s bearbeiten</target>
