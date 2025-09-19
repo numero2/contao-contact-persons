@@ -6,12 +6,12 @@
  * @author    Benny Born <benny.born@numero2.de>
  * @author    Michael Bösherz <michael.boesherz@numero2.de>
  * @license   LGPL
- * @copyright Copyright (c) 2024, numero2 - Agentur für digitales Marketing GbR
+ * @copyright Copyright (c) 2025, numero2 - Agentur für digitales Marketing GbR
  */
 
 
-use Contao\DC_Table;
 use Contao\DataContainer;
+use Contao\DC_Table;
 use numero2\ContactPersonsBundle\ContactPersonModel;
 use numero2\ContactPersonsBundle\ContactPersonRelPageModel;
 
@@ -57,7 +57,7 @@ $GLOBALS['TL_DCA'][ContactPersonModel::getTable()] = [
             ,   'attributes'        => 'onclick="if (!confirm(\'' . ($GLOBALS['TL_LANG']['MSC']['deleteConfirm'] ?? '') . '\')) return false; Backend.getScrollOffset();"'
             ]
         ,   'toggle' => [
-                'href'                => 'act=toggle&amp;field=published'
+                'href'              => 'act=toggle&amp;field=published'
             ,   'icon'              => 'visible.svg'
             ,   'attributes'        => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"'
             ]
@@ -167,7 +167,7 @@ $GLOBALS['TL_DCA'][ContactPersonModel::getTable()] = [
         ,   'filter'                => true
         ,   'toggle'                => true
         ,   'eval'                  => ['doNotCopy'=>true]
-        ,   'sql'                   => "char(1) NOT NULL default ''"
+        ,   'sql'                   => ['type'=>'boolean', 'default'=>false]
         ]
     ]
 ];

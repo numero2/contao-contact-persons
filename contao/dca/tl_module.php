@@ -6,7 +6,7 @@
  * @author    Benny Born <benny.born@numero2.de>
  * @author    Michael Bösherz <michael.boesherz@numero2.de>
  * @license   LGPL
- * @copyright Copyright (c) 2024, numero2 - Agentur für digitales Marketing GbR
+ * @copyright Copyright (c) 2025, numero2 - Agentur für digitales Marketing GbR
  */
 
 
@@ -35,7 +35,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['contact_persons_inherit'] = [
     'exclude'               => true
 ,   'inputType'             => 'checkbox'
 ,   'eval'                  => ['tl_class'=>'clr w50']
-,   'sql'                   => "char(1) COLLATE ascii_bin NOT NULL default ''"
+,   'sql'                   => ['type'=>'boolean', 'default'=>false]
 ];
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['contact_person_sorting'] = [
