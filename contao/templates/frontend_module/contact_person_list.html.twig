@@ -1,0 +1,17 @@
+{% extends "@Contao/frontend_module/_base.html.twig" %}
+{% use "@Contao/component/_contact_person.html.twig" %}
+{% trans_default_domain 'contao_default' %}
+
+{% set searchable = false %}
+
+{% block content %}
+
+    {% if contacts is empty %}
+        <p class="empty">{{ "MSC.contact_person_list.empty"|trans }}</p>
+    {% else %}
+        {% for contact in contacts %}
+            {{ block('contact_person') }}
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

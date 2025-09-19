@@ -1,0 +1,8 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+{% use "@Contao/component/_contact_person.html.twig" %}
+
+{% block content %}
+    {% if contact is not empty %}
+        {{ block('contact_person') }}
+    {% endif %}
+{% endblock %}

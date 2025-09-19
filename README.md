@@ -11,7 +11,7 @@ Manage contact persons for pages, news and events.
 System requirements
 --
 
-* [Contao 4.13](https://github.com/contao/contao) (or newer)
+* [Contao 5.0](https://github.com/contao/contao) (or newer)
 
 Installation
 --

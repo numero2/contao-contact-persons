@@ -12,6 +12,8 @@
 namespace numero2\ContactPersonsBundle\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
+use Contao\NewsBundle\ContaoNewsBundle;
+use Contao\CalendarBundle\ContaoCalendarBundle ;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
@@ -29,8 +31,9 @@ class Plugin implements BundlePluginInterface {
         return [
             BundleConfig::create(ContactPersonsBundle::class)
                 ->setLoadAfter([
-                    ContaoCoreBundle::class
-                ,   'notification_center'
+                    ContaoCoreBundle::class,
+                    ContaoNewsBundle::class,
+                    ContaoCalendarBundle ::class,
                 ])
         ];
     }

@@ -28,12 +28,12 @@ class ContactPersonParseEvent extends Event {
     /**
      * @var Contao\Model
      */
-    private $model;
+    private Model $model;
 
     /**
-     * @var Contao\Model
+     * @var Contao\PageModel|null
      */
-    private $pageModel;
+    private PageModel|null $pageModel;
 
 
     public function __construct( array $contact, Model $model, ?PageModel $pageModel=null ) {
@@ -76,36 +76,10 @@ class ContactPersonParseEvent extends Event {
 
 
     /**
-     * @param Contao\Model $model
-     *
-     * @return numero2\ContactPersonsBundle\Event\ContactPersonParseEvent
-     */
-    public function setModel( Model $model ): self {
-
-        $this->model = $model;
-
-        return $this;
-    }
-
-
-    /**
      * @return Contao\PageModel|null
      */
     public function getPageModel(): ?PageModel {
 
         return $this->pageModel;
-    }
-
-
-    /**
-     * @param Contao\PageModel $model
-     *
-     * @return numero2\ContactPersonsBundle\Event\ContactPersonParseEvent
-     */
-    public function setPageModel( PageModel $pageModel ): self {
-
-        $this->pageModel = $pageModel;
-
-        return $this;
     }
 }

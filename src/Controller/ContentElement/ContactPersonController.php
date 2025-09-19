@@ -13,11 +13,12 @@
 namespace numero2\ContactPersonsBundle\Controller\ContentElement;
 
 use Contao\ContentModel;
-use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\Routing\ScopeMatcher;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\ContentProxy;
 use Contao\FrontendTemplate;
-use Contao\Template;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\CoreBundle\Routing\ScopeMatcher;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use numero2\ContactPersonsBundle\ContactPersonModel;
 use numero2\ContactPersonsBundle\Event\ContactPersonEvents;
 use numero2\ContactPersonsBundle\Event\ContactPersonParseEvent;
@@ -26,24 +27,19 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
-/**
- * @ContentElement("contact_person",
- *   category="includes",
- *   template="ce_contact_person",
- * )
- */
+#[AsContentElement('contact_person', category: 'includes')]
 class ContactPersonController extends AbstractContentElementController {
 
 
     /**
      * @var Symfony\Component\EventDispatcher\EventDispatcherInterface
      */
-    private $eventDispatcher;
+    private EventDispatcherInterface $eventDispatcher;
 
     /**
      * @var Contao\CoreBundle\Routing\ScopeMatcher
      */
-    private $scopeMatcher;
+    private ScopeMatcher $scopeMatcher;
 
 
     public function __construct( EventDispatcherInterface $eventDispatcher, ScopeMatcher $scopeMatcher ) {
@@ -56,7 +52,7 @@ class ContactPersonController extends AbstractContentElementController {
     /**
      * {@inheritdoc}
      */
-    protected function getResponse( Template $template, ContentModel $model, Request $request ): ?Response {
+    protected function getResponse( FragmentTemplate $template, ContentModel $model, Request $request ): Response {
 
         $oContact = ContactPersonModel::findPublishedById($model->contact_person);
 
@@ -72,14 +68,7 @@ class ContactPersonController extends AbstractContentElementController {
 
         $contact = $event->getContactPerson();
 
-        if( $this->scopeMatcher->isBackendRequest($request) ) {
-            $model->contact_person_template = null;
-        }
-
-        $contactTemplate = new FrontendTemplate($model->contact_person_template ?: 'contact_person_default');
-        $contactTemplate->setData($contact);
-
-        $template->contact = $contactTemplate->parse();
+        $template->set('contact', $contact);
 
         return $template->getResponse();
     }

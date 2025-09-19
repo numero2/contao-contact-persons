@@ -11,6 +11,7 @@
 
 
 use Contao\DC_Table;
+use Contao\DataContainer;
 use numero2\ContactPersonsBundle\ContactPersonModel;
 use numero2\ContactPersonsBundle\ContactPersonRelPageModel;
 

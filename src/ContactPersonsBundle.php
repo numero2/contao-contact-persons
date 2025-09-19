@@ -16,7 +16,12 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class ContactPersonsBundle extends Bundle {
 
+
+    /**
+     * {@inheritdoc}
+     */
     public function getPath(): string {
+
         return \dirname(__DIR__);
     }
 }

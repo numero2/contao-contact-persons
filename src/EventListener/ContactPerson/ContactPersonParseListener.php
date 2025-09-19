@@ -24,7 +24,7 @@ class ContactPersonParseListener {
     /**
      * @var Contao\CoreBundle\Image\Studio\Studio
      */
-    private $imageStudio;
+    private Studio $imageStudio;
 
 
     public function __construct( Studio $imageStudio ) {
@@ -70,7 +70,7 @@ class ContactPersonParseListener {
             $figure = $figureBuilder->buildIfResourceExists();
 
             if( $figure ) {
-                $contact['singleSRCFigure'] = $figure->getLegacyTemplateData();
+                $contact['singleSRCFigure'] = $figure;
             }
         }
 

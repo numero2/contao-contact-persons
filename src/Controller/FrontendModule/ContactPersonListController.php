@@ -14,14 +14,15 @@ namespace numero2\ContactPersonsBundle\Controller\FrontendModule;
 
 use Contao\CalendarEventsModel;
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
 use Contao\CoreBundle\Routing\ResponseContext\JsonLd\JsonLdManager;
 use Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor;
 use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\FrontendTemplate;
 use Contao\ModuleModel;
 use Contao\NewsModel;
 use Contao\StringUtil;
-use Contao\Template;
 use numero2\ContactPersonsBundle\ContactPersonModel;
 use numero2\ContactPersonsBundle\ContactPersonRelPageModel;
 use numero2\ContactPersonsBundle\Event\ContactPersonEvents;
@@ -34,34 +35,29 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 
-/**
- * @FrontendModule("contact_person_list",
- *   category="contactPersons",
- *   template="mod_contact_person_list",
- * )
- */
+#[AsFrontendModule('contact_person_list', category: "contactPersons")]
 class ContactPersonListController extends AbstractFrontendModuleController {
 
 
     /**
      * @var Symfony\Component\EventDispatcher\EventDispatcherInterface
      */
-    private $eventDispatcher;
+    private EventDispatcherInterface $eventDispatcher;
 
     /**
      * @var Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor
      */
-    private $responseContextAccessor;
+    private ResponseContextAccessor $responseContextAccessor;
 
     /**
      * @var Symfony\Contracts\Translation\TranslatorInterface
      */
-    private $translator;
+    private TranslatorInterface $translator;
 
     /**
      * @var array
      */
-    private $supportedPageTypes;
+    private array $supportedPageTypes;
 
 
     public function __construct( EventDispatcherInterface $eventDispatcher, ResponseContextAccessor $responseContextAccessor, TranslatorInterface $translator ) {
@@ -84,7 +80,7 @@ class ContactPersonListController extends AbstractFrontendModuleController {
     /**
      * {@inheritdoc}
      */
-    protected function getResponse( Template $template, ModuleModel $model, Request $request ): ?Response {
+    protected function getResponse( FragmentTemplate $template, ModuleModel $model, Request $request ): Response {
 
         $contacts = [];
 
@@ -199,16 +195,10 @@ class ContactPersonListController extends AbstractFrontendModuleController {
 
             $contact = $event->getContactPerson();
 
-            $contactTemplate = new FrontendTemplate($model->contact_person_template ?: 'contact_person_default');
-            $contactTemplate->setData($contact);
-
-            $contacts[$key] = $contactTemplate->parse();
+            $contacts[$key] = $contact;
         }
 
-        $template->contacts = $contacts;
-
-        $template->empty = $this->translator->trans('MSC.contact_person_list.empty', [], 'contao_default');
-
+        $template->set('contacts', $contacts);
         return $template->getResponse();
     }
 

@@ -1,0 +1,18 @@
+{% use "@Contao/component/_figure.html.twig" %}
+
+{% block contact_person %}
+    <div class="contact_person">
+        {% if contact.title is not empty %}{{ contact.title }}<br>{% endif %}
+        {% if contact.firstname is not empty %}{{ contact.firstname }} {% endif %}{{ contact.lastname }}<br>
+        {% if contact.position is not empty %}{{ contact.position }}<br>{% endif %}
+        {% if contact.phone is not empty %}<a href="{{ contact.phoneHref }}">{{ contact.phone }}</a><br>{% endif %}
+        {% if contact.fax is not empty %}<a href="{{ contact.faxHref }}">{{ contact.fax }}</a><br>{% endif %}
+        {% if contact.email is not empty %}{{ contact.email|encode_email }}<br>{% endif %}
+
+        {% if contact.singleSRCFigure ?? null  %}
+            {% with {figure: contact.singleSRCFigure} %}
+                {{ block('figure_component') }}
+            {% endwith %}
+        {% endif %}
+    </div>
+{% endblock %}

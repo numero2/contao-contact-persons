@@ -12,24 +12,3 @@ services:
 
     numero2_contact_persons.listener.data_container.contact_person:
         class: numero2\ContactPersonsBundle\EventListener\DataContainer\ContactPersonListener
-
-
-    numero2_contact_persons.listener.element_contact_person_template_options:
-        class: numero2\ContactPersonsBundle\EventListener\DataContainer\DefaultTemplateOptionsListener
-        arguments:
-            - '@contao.framework'
-            - '@request_stack'
-            - contact_person_
-            - contact_person_default
-        tags:
-            - { name: contao.callback, table: tl_content, target: fields.contact_person_template.options }
-
-    numero2_contact_persons.listener.module_contact_person_template_options:
-        class: numero2\ContactPersonsBundle\EventListener\DataContainer\DefaultTemplateOptionsListener
-        arguments:
-            - '@contao.framework'
-            - '@request_stack'
-            - contact_person_
-            - contact_person_default
-        tags:
-            - { name: contao.callback, table: tl_module, target: fields.contact_person_template.options }
