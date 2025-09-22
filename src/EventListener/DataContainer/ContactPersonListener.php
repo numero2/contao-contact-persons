@@ -17,6 +17,12 @@ use Contao\DataContainer;
 use Contao\Model;
 use Contao\StringUtil;
 use numero2\ContactPersonsBundle\ContactPersonRelPageModel;
+use numero2\ContactPersonsBundle\ContactPersonModel;
+use Contao\CalendarEventsModel;
+use Contao\NewsModel;
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Exception;
 
 
 class ContactPersonListener {
@@ -28,10 +34,10 @@ class ContactPersonListener {
      * @param mixed $value
      * @param Contao\DataContainer $dc
      *
-     * @Callback(table="tl_contact_person", target="fields.pages.load")
-     * @Callback(table="tl_contact_person", target="fields.news.load")
-     * @Callback(table="tl_contact_person", target="fields.events.load")
      */
+    #[AsCallback('tl_contact_person', target: 'fields.pages.load')]
+    #[AsCallback('tl_contact_person', target: 'fields.news.load')]
+    #[AsCallback('tl_contact_person', target: 'fields.events.load"')]
     public function loadPagesFromRelationTable( $value, DataContainer $dc ) {
 
         if( !$dc->id  || !strlen($dc->field) ) {
@@ -44,7 +50,12 @@ class ContactPersonListener {
             $table = explode('.', $GLOBALS['TL_DCA'][$dc->table]['fields'][$dc->field]['foreignKey'], 2)[0];
         }
 
-        $strClass = Model::getClassFromTable($table);
+        $strClass = "";
+
+        try {
+            $strClass = Model::getClassFromTable($table);
+        } catch (Exception $e) {}
+
         if( empty($strClass) || !class_exists($strClass) ) {
             unset($GLOBALS['TL_DCA'][$dc->table]['fields'][$dc->field]);
             return $value;
@@ -70,10 +81,10 @@ class ContactPersonListener {
      * @param mixed $value
      * @param Contao\DataContainer $dc
      *
-     * @Callback(table="tl_contact_person", target="fields.pages.save")
-     * @Callback(table="tl_contact_person", target="fields.news.save")
-     * @Callback(table="tl_contact_person", target="fields.events.save")
      */
+    #[AsCallback('tl_contact_person', target: 'fields.pages.save')]
+    #[AsCallback('tl_contact_person', target: 'fields.news.save')]
+    #[AsCallback('tl_contact_person', target: 'fields.events.save')]
     public function savePagesInRelationTable( $value, DataContainer $dc ) {
 
         if( !$dc->id  || !strlen($dc->field) ) {
@@ -127,5 +138,33 @@ class ContactPersonListener {
         }
 
         return $value;
+    }
+
+    /**
+     * Add missing palette fields for events and news
+     *
+     * @param Contao\DataContainer $dc
+     *
+     */
+    #[AsCallback('tl_contact_person', target: 'config.onload')]
+    public function addMissingPaletteFields( DataContainer $dc ): void {
+
+        $active = $dc->getActiveRecord();
+
+        $t = ContactPersonModel::getTable();
+
+        if (class_exists(NewsModel::class)) {
+            PaletteManipulator::create()
+            ->addField('news', 'page_legend', PaletteManipulator::POSITION_APPEND)
+            ->applyToPalette('default', $t);
+            ;
+        }
+
+        if (class_exists(CalendarEventsModel::class)) {
+            PaletteManipulator::create()
+                ->addField('events', 'page_legend', PaletteManipulator::POSITION_APPEND)
+                ->applyToPalette('default', $t);
+            ;
+        }
     }
 }

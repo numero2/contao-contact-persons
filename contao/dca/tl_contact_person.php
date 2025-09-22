@@ -68,7 +68,7 @@ $GLOBALS['TL_DCA'][ContactPersonModel::getTable()] = [
         ]
     ]
 ,   'palettes' => [
-        'default'           => '{common_legend},title,firstname,lastname,position,phone,fax,email;{source_legend},singleSRC;{page_legend},pages,news,events;{publish_legend},published'
+        'default'           => '{common_legend},title,firstname,lastname,position,phone,fax,email;{source_legend},singleSRC;{page_legend},pages;{publish_legend},published'
     ]
 ,   'fields' => [
         'id' => [

@@ -1,6 +1,8 @@
 services:
     _defaults:
         public: true
+        autowire: true
+        autoconfigure: true
 
     numero2_contact_persons.listener.contact_person.contact_person_parse:
         class: numero2\ContactPersonsBundle\EventListener\ContactPerson\ContactPersonParseListener
