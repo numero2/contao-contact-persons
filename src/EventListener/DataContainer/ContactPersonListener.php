@@ -5,8 +5,9 @@
  *
  * @author    Benny Born <benny.born@numero2.de>
  * @author    Michael Bösherz <michael.boesherz@numero2.de>
+ * @author    Christopher Brandt <christopher.brandt@numero2.de>
  * @license   LGPL
- * @copyright Copyright (c) 2024, numero2 - Agentur für digitales Marketing GbR
+ * @copyright Copyright (c) 2025, numero2 - Agentur für digitales Marketing GbR
  */
 
 
@@ -140,6 +141,7 @@ class ContactPersonListener {
         return $value;
     }
 
+
     /**
      * Add missing palette fields for events and news
      *
@@ -153,18 +155,34 @@ class ContactPersonListener {
 
         $t = ContactPersonModel::getTable();
 
-        if (class_exists(NewsModel::class)) {
+        if( class_exists(NewsModel::class) ) {
+
             PaletteManipulator::create()
             ->addField('news', 'page_legend', PaletteManipulator::POSITION_APPEND)
             ->applyToPalette('default', $t);
             ;
         }
 
-        if (class_exists(CalendarEventsModel::class)) {
+        if( class_exists(CalendarEventsModel::class) ) {
+
             PaletteManipulator::create()
                 ->addField('events', 'page_legend', PaletteManipulator::POSITION_APPEND)
                 ->applyToPalette('default', $t);
             ;
         }
+    }
+
+
+    /**
+     * Make fields lowercase
+     *
+     * @param mixed $value
+     * @param Contao\DataContainer $dc
+     *
+     */
+    #[AsCallback('tl_contact_person', target: 'fields.email.save')]
+    public function lowercaseFields( $value, DataContainer $dc ) {
+
+        return strtolower($value);
     }
 }

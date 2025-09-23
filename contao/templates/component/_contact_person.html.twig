@@ -14,5 +14,9 @@
                 {{ block('figure_component') }}
             {% endwith %}
         {% endif %}
+
+        {% if contact.vcf is defined %}
+            <a href="{{contact.vcf}}">VCF</a>
+        {% endif %}
     </div>
 {% endblock %}

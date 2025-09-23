@@ -8,6 +8,7 @@ services:
         class: numero2\ContactPersonsBundle\EventListener\ContactPerson\ContactPersonParseListener
         arguments:
             - '@contao.image.studio'
+            - '@contao.routing.content_url_generator'
         tags:
             - { name: kernel.event_listener, event: contao.contact_person_parse, priority: 0 }
 

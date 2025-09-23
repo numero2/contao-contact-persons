@@ -5,6 +5,7 @@
  *
  * @author    Benny Born <benny.born@numero2.de>
  * @author    Michael Bösherz <michael.boesherz@numero2.de>
+ * @author    Christopher Brandt <christopher.brandt@numero2.de>
  * @license   LGPL
  * @copyright Copyright (c) 2025, numero2 - Agentur für digitales Marketing GbR
  */
@@ -68,7 +69,11 @@ $GLOBALS['TL_DCA'][ContactPersonModel::getTable()] = [
         ]
     ]
 ,   'palettes' => [
-        'default'           => '{common_legend},title,firstname,lastname,position,phone,fax,email;{source_legend},singleSRC;{page_legend},pages;{publish_legend},published'
+        '__selector__'      => ['generate_vcf']
+    ,   'default'           => '{common_legend},title,salutation,firstname,lastname,position,phone,fax,email,street,postal,city,country;{vcf_legend},generate_vcf;{source_legend},singleSRC;{page_legend},pages;{publish_legend},published'
+    ]
+,   'subpalettes' => [
+        'generate_vcf'                  => 'vcf_file'
     ]
 ,   'fields' => [
         'id' => [
@@ -78,6 +83,14 @@ $GLOBALS['TL_DCA'][ContactPersonModel::getTable()] = [
             'sql'           => "int(10) unsigned NOT NULL default 0"
         ]
     ,   'title' => [
+            'exclude'               => true
+        ,   'inputType'             => 'text'
+        ,   'search'                => true
+        ,   'sorting'               => true
+        ,   'eval'                  => ['maxlength'=>255, 'tl_class'=>'w50']
+        ,   'sql'                   => "varchar(64) NOT NULL default ''"
+        ]
+    ,   'salutation' => [
             'exclude'               => true
         ,   'inputType'             => 'text'
         ,   'search'                => true
@@ -168,6 +181,41 @@ $GLOBALS['TL_DCA'][ContactPersonModel::getTable()] = [
         ,   'toggle'                => true
         ,   'eval'                  => ['doNotCopy'=>true]
         ,   'sql'                   => ['type'=>'boolean', 'default'=>false]
+        ]
+    ,   'street' => [
+            'inputType'         => 'text'
+        ,   'search'            => true
+        ,   'eval'              => ['maxlength'=>64, 'tl_class'=>'w50']
+        ,   'sql'               => "varchar(64) NOT NULL default ''"
+        ]
+    ,   'postal' => [
+            'inputType'         => 'text'
+        ,   'search'            => true
+        ,   'feSortable'        => true
+        ,   'filter'            => true
+        ,   'eval'              => ['maxlength'=>64, 'tl_class'=>'w50']
+        ,   'sql'               => "varchar(64) NOT NULL default ''"
+        ]
+    ,   'city' => [
+            'inputType'         => 'text'
+        ,   'search'            => true
+        ,   'feSortable'        => true
+        ,   'filter'            => true
+        ,   'sorting'           => true
+        ,   'eval'              => ['maxlength'=>64, 'tl_class'=>'w50']
+        ,   'sql'               => "varchar(64) NOT NULL default ''"
+        ]
+    ,   'generate_vcf' => [
+            'exclude'               => true
+        ,   'inputType'             => 'checkbox'
+        ,   'eval'                  => ['tl_class'=>'clr', 'submitOnChange'=>true]
+        ,   'sql'                   => ['type'=>'boolean', 'default'=>false]
+        ]
+    ,   'vcf_file' => [
+            'exclude'               => true
+        ,   'inputType'             => 'fileTree'
+        ,   'eval'                  => ['fieldType'=>'radio', 'filesOnly'=>true, 'extensions'=>'vcf', 'tl_class'=>'clr']
+        ,   'sql'                   => "binary(16) NULL"
         ]
     ]
 ];

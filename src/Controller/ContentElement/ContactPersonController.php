@@ -5,6 +5,7 @@
  *
  * @author    Benny Born <benny.born@numero2.de>
  * @author    Michael Bösherz <michael.boesherz@numero2.de>
+ * @author    Christopher Brandt <christopher.brandt@numero2.de>
  * @license   LGPL
  * @copyright Copyright (c) 2025, numero2 - Agentur für digitales Marketing GbR
  */
@@ -17,6 +18,7 @@ use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\CoreBundle\Routing\ScopeMatcher;
 use Contao\CoreBundle\Twig\FragmentTemplate;
+use Contao\StringUtil;
 use numero2\ContactPersonsBundle\ContactPersonModel;
 use numero2\ContactPersonsBundle\Event\ContactPersonEvents;
 use numero2\ContactPersonsBundle\Event\ContactPersonParseEvent;
@@ -52,21 +54,26 @@ class ContactPersonController extends AbstractContentElementController {
      */
     protected function getResponse( FragmentTemplate $template, ContentModel $model, Request $request ): Response {
 
-        $oContact = ContactPersonModel::findPublishedById($model->contact_person);
+        $oContacts = StringUtil::deserialize($model->contact_person, true);
 
-        if( !$oContact ) {
+        if( empty($oContacts) ) {
+
             return new Response('');
         }
 
-        $contact = $oContact->row();
+        $contacts = [];
 
-        // parse data
-        $event = new ContactPersonParseEvent($contact, $model);
-        $this->eventDispatcher->dispatch($event, ContactPersonEvents::CONTACT_PERSON_PARSE);
+        foreach( $oContacts as $oContact ) {
 
-        $contact = $event->getContactPerson();
+            $contact = ContactPersonModel::findPublishedById($oContact);
+            $contact = $contact->row();
+            $event = new ContactPersonParseEvent($contact, $model, $this->getPageModel());
+            $this->eventDispatcher->dispatch($event, ContactPersonEvents::CONTACT_PERSON_PARSE);
 
-        $template->set('contact', $contact);
+            $contacts[] = $event->getContactPerson();
+        }
+
+        $template->set('contacts', $contacts);
 
         return $template->getResponse();
     }

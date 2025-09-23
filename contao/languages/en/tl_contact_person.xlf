@@ -25,6 +25,9 @@
     <trans-unit id="tl_contact_person.common_legend">
         <target>Allgemein</target>
     </trans-unit>
+    <trans-unit id="tl_contact_person.vcf_legend">
+        <target>VCF Datei</target>
+    </trans-unit>
     <trans-unit id="tl_contact_person.source_legend">
         <target>Bild</target>
     </trans-unit>
@@ -40,6 +43,12 @@
     </trans-unit>
     <trans-unit id="tl_contact_person.title.1">
         <target>Bitte geben Sie den Titel ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.salutation.0">
+        <target>Anrede</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.salutation.1">
+        <target>Bitte geben Sie die Anrede ein.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.firstname.0">
         <target>Vorname</target>
@@ -76,6 +85,36 @@
     </trans-unit>
     <trans-unit id="tl_contact_person.email.1">
         <target>Bitte geben Sie eine gültige E-Mail-Adresse ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.street.0">
+        <target>Straße</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.street.1">
+        <target>Bitte geben Sie den Straße ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.postal.0">
+        <target>Postleitzahl</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.postal.1">
+        <target>Bitte geben Sie die Postleitzahl ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.city.0">
+        <target>Ort</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.city.1">
+        <target>Bitte geben Sie den Ort ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.generate_vcf.0">
+        <target>VCF Datei ausgeben</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.generate_vcf.1">
+        <target>Soll eine VCF Datei ausgegeben werden?</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.vcf_file.0">
+        <target>VCF Datei</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.vcf_file.1">
+        <target>Bitte wählen Sie eine VCF Datei (leer lassen wenn die Datei generiert werden soll)</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.singleSRC.0">
         <target>Bild</target>

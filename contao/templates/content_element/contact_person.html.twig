@@ -2,7 +2,9 @@
 {% use "@Contao/component/_contact_person.html.twig" %}
 
 {% block content %}
-    {% if contact is not empty %}
-        {{ block('contact_person') }}
+    {% if contacts is not empty %}
+        {% for contact in contacts %}
+            {{ block('contact_person') }}
+        {% endfor %}
     {% endif %}
 {% endblock %}
