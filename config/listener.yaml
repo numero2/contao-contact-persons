@@ -9,6 +9,7 @@ services:
         arguments:
             - '@contao.image.studio'
             - '@contao.routing.content_url_generator'
+            - '@request_stack'
         tags:
             - { name: kernel.event_listener, event: contao.contact_person_parse, priority: 0 }
 

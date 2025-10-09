@@ -23,7 +23,9 @@ use Contao\StringUtil;
 use Contao\System;
 use JeroenDesloovere\VCard\VCard;
 use numero2\ContactPersonsBundle\Event\ContactPersonParseEvent;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 
 class ContactPersonParseListener {
@@ -39,11 +41,17 @@ class ContactPersonParseListener {
      */
     private ContentUrlGenerator $urlGenerator;
 
+    /**
+     * @var Symfony\Component\HttpFoundation\RequestStack
+     */
+    private RequestStack $requestStack;
 
-    public function __construct( Studio $imageStudio, ContentUrlGenerator $urlGenerator  ) {
+
+    public function __construct( Studio $imageStudio, ContentUrlGenerator $urlGenerator, RequestStack $requestStack ) {
 
         $this->imageStudio = $imageStudio;
         $this->urlGenerator = $urlGenerator;
+        $this->requestStack = $requestStack;
     }
 
     /**
@@ -121,10 +129,20 @@ class ContactPersonParseListener {
 
         if( $contact['generate_vcf'] ) {
 
-            if($oPage) {
+            if( $oPage ) {
 
                 if( empty($contact['vcf_file']) ) {
-                    $contact['vcf'] = $this->urlGenerator->generate($oPage, ["vcfDownload"=>md5($contact['id'])], UrlGeneratorInterface::ABSOLUTE_URL);
+
+                    if( $oPage->requireItem ) {
+
+                        $request = $this->requestStack->getMainRequest();
+                        $contact['vcf'] = Request::create($request->getUri(), 'GET', ['vcfDownload'=>md5($contact['id'])])->getUri();
+
+                    } else {
+
+                        $contact['vcf'] = $this->urlGenerator->generate($oPage, ['vcfDownload'=>md5($contact['id'])], UrlGeneratorInterface::ABSOLUTE_URL);
+                    }
+
                 } else {
                     $contact['vcf'] = FilesModel::findByUuid($contact['vcf_file'])->path;
                 }
