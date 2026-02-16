@@ -7,7 +7,7 @@
  * @author    Michael Bösherz <michael.boesherz@numero2.de>
  * @author    Christopher Brandt <christopher.brandt@numero2.de>
  * @license   LGPL
- * @copyright Copyright (c) 2025, numero2 - Agentur für digitales Marketing GbR
+ * @copyright Copyright (c) 2026, numero2 - Agentur für digitales Marketing GbR
  */
 
 
@@ -23,9 +23,9 @@ use Contao\StringUtil;
 use Contao\System;
 use JeroenDesloovere\VCard\VCard;
 use numero2\ContactPersonsBundle\Event\ContactPersonParseEvent;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Symfony\Component\HttpFoundation\Request;
 
 
 class ContactPersonParseListener {
@@ -54,6 +54,7 @@ class ContactPersonParseListener {
         $this->requestStack = $requestStack;
     }
 
+
     /**
      * Parses the given contact person
      *
@@ -63,7 +64,7 @@ class ContactPersonParseListener {
 
         $contact = $event->getContactPerson();
         $model = $event->getModel();
-        $oPage = $event->getPageModel();
+        $page = $event->getPageModel();
 
         // generate tel href
         if( strlen($contact['phone']) ) {
@@ -129,18 +130,18 @@ class ContactPersonParseListener {
 
         if( $contact['generate_vcf'] ) {
 
-            if( $oPage ) {
+            if( $page ) {
 
                 if( empty($contact['vcf_file']) ) {
 
-                    if( $oPage->requireItem ) {
+                    if( $page->requireItem ) {
 
                         $request = $this->requestStack->getMainRequest();
                         $contact['vcf'] = Request::create($request->getUri(), 'GET', ['vcfDownload'=>md5($contact['id'])])->getUri();
 
                     } else {
 
-                        $contact['vcf'] = $this->urlGenerator->generate($oPage, ['vcfDownload'=>md5($contact['id'])], UrlGeneratorInterface::ABSOLUTE_URL);
+                        $contact['vcf'] = $this->urlGenerator->generate($page, ['vcfDownload'=>md5($contact['id'])], UrlGeneratorInterface::ABSOLUTE_URL);
                     }
 
                 } else {

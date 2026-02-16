@@ -6,7 +6,21 @@ Contao Contact Persons Bundle
 About
 --
 
-Manage contact persons for pages, news and events.
+This bundle allows you to **manage contact persons for individual pages, news items, or events**.
+
+**Features**
+
+- Manage contact persons for pages, news, or events.
+- A dedicated **content element** to:
+  - display a single contact person, or
+  - output a **list of selected contact persons**
+- Optionally attach a **VCF file** to each contact person
+- Alternatively, automatically generate a VCF file from the information stored in the backend for download
+
+Screenshot
+--
+
+![Editing a contact person](./docs/screenshot.png)
 
 System requirements
 --

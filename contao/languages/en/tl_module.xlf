@@ -4,39 +4,39 @@
 <body>
     <!-- LEGENDS -->
     <trans-unit id="tl_module.contact_persons_legend">
-        <target>Ansprechpartner</target>
+        <target>Contact persons</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_module.contact_persons.0">
-        <target>Ansprechpartner</target>
+        <target>Contact person</target>
     </trans-unit>
     <trans-unit id="tl_module.contact_persons.1">
-        <target>Bitte wählen Sie die Ansprechpartner aus, die angezeigt werden sollen. Sind keine Ausgewählt, werden sie Seiten-Einstellungen in den Kontaktpersonen verwendet.</target>
+        <target>Please select the contact persons to display. If none are selected, the page settings for contact persons will be used.</target>
     </trans-unit>
     <trans-unit id="tl_module.contact_persons_inherit.0">
-        <target>Ansprechpartner vererben</target>
+        <target>Inherit contact persons</target>
     </trans-unit>
     <trans-unit id="tl_module.contact_persons_inherit.1">
-        <target>Bitte wählen Sie ob Ansprechpartner von darüber liegenden Seiten, verwendet werden sollen, sobald für die aktuelle Seite keine gefunden werden.</target>
+        <target>Please select whether contact persons from parent pages should be used when none are found for the current page.</target>
     </trans-unit>
     <trans-unit id="tl_module.contact_person_sorting.0">
-        <target>Sortierung</target>
+        <target>Sorting</target>
     </trans-unit>
     <trans-unit id="tl_module.contact_person_sorting.1">
-        <target>Bitte geben Sie das Feld ein nachdem die Einträge sortiert werden soll.</target>
+        <target>Please specify the field by which the entries should be sorted.</target>
     </trans-unit>
     <trans-unit id="tl_module.contact_person_template.0">
-        <target>Ansprechpartner-Template</target>
+        <target>Contact person template</target>
     </trans-unit>
     <trans-unit id="tl_module.contact_person_template.1">
-        <target>Hier können Sie ein Ansprechpartner-Template auswählen.</target>
+        <target>Here you can select a contact person template.</target>
     </trans-unit>
     <!-- OPTIONS -->
     <trans-unit id="tl_module.contact_person_sortings.asc">
-        <target>aufsteigend</target>
+        <target>ascending</target>
     </trans-unit>
     <trans-unit id="tl_module.contact_person_sortings.desc">
-        <target>absteigend</target>
+        <target>descending</target>
     </trans-unit>
 </body>
 </file>

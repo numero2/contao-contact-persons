@@ -7,7 +7,7 @@
  * @author    Michael Bösherz <michael.boesherz@numero2.de>
  * @author    Christopher Brandt <christopher.brandt@numero2.de>
  * @license   LGPL
- * @copyright Copyright (c) 2025, numero2 - Agentur für digitales Marketing GbR
+ * @copyright Copyright (c) 2026, numero2 - Agentur für digitales Marketing GbR
  */
 
 
@@ -57,7 +57,6 @@ class ContactPersonController extends AbstractContentElementController {
         $oContacts = StringUtil::deserialize($model->contact_person, true);
 
         if( empty($oContacts) ) {
-
             return new Response('');
         }
 
@@ -67,6 +66,7 @@ class ContactPersonController extends AbstractContentElementController {
 
             $contact = ContactPersonModel::findPublishedById($oContact);
             $contact = $contact->row();
+
             $event = new ContactPersonParseEvent($contact, $model, $this->getPageModel());
             $this->eventDispatcher->dispatch($event, ContactPersonEvents::CONTACT_PERSON_PARSE);
 

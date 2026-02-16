@@ -4,17 +4,21 @@
 <body>
     <!-- BACKEND -->
     <trans-unit id="MOD.contactPersons.0">
-        <target>Contact Person</target>
+        <source>Contact Person</source>
+        <target>Ansprechpartner</target>
     </trans-unit>
     <trans-unit id="MOD.contactPersons.1">
-        <target>Manage Contact Person</target>
+        <source>Manage Contact Person</source>
+        <target>Ansprechpartner verwalte</target>
     </trans-unit>
     <!-- FRONTEND -->
     <trans-unit id="FMD.contactPersons.0">
-        <target>Contact Person</target>
+        <source>Contact Person</source>
+        <target>Ansprechpartner</target>
     </trans-unit>
     <trans-unit id="FMD.contact_person_list.0">
-        <target>Contact Person List</target>
+        <source>Contact Person List</source>
+        <target>Ansprechpartner Liste</target>
     </trans-unit>
 </body>
 </file>

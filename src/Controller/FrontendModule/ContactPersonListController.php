@@ -7,7 +7,7 @@
  * @author    Michael Bösherz <michael.boesherz@numero2.de>
  * @author    Christopher Brandt <christopher.brandt@numero2.de>
  * @license   LGPL
- * @copyright Copyright (c) 2025, numero2 - Agentur für digitales Marketing GbR
+ * @copyright Copyright (c) 2026, numero2 - Agentur für digitales Marketing GbR
  */
 
 
@@ -125,19 +125,18 @@ class ContactPersonListController extends AbstractFrontendModuleController {
             $nodes = $graph->getNodes();
 
             foreach( $this->supportedPageTypes as $cls => $table ) {
-                if( is_array($nodes[$cls] ?? null) ) {
-                    foreach( $nodes[$cls] as $identifier => $data ) {
 
-                        // \Contao\News => 'identifier' => '#/schema/news/' . $objArticle->id,
-                        // \Contao\Event => 'identifier' => '#/schema/events/' . $objEvent->id,
+                if( is_array($nodes[$cls] ?? null) ) {
+
+                    foreach( $nodes[$cls] as $identifier => $data ) {
 
                         $chunks = explode('/', $identifier);
 
                         if( !empty($chunks[3]) ) {
 
                             $pageId = intval($chunks[3]);
-
                             $relations = ContactPersonRelPageModel::findBy(['page_table=? AND page_id=?'], [$table, $pageId]);
+
                             if( $relations ) {
                                 $contactIds = array_merge($relations->fetchEach('pid'), $contactIds);
                             }
@@ -161,6 +160,7 @@ class ContactPersonListController extends AbstractFrontendModuleController {
                     foreach( $trail as $pageId ) {
 
                         $relations = ContactPersonRelPageModel::findBy(['page_table=? AND page_id=?'], [$table, $pageId]);
+
                         if( $relations ) {
                             $contactIds = array_merge($relations->fetchEach('pid'), $contactIds);
                             break;
@@ -189,7 +189,7 @@ class ContactPersonListController extends AbstractFrontendModuleController {
         // parse entries
         foreach( $contacts as $key => $contact ) {
 
-            $event = new ContactPersonParseEvent($contact, $model);
+            $event = new ContactPersonParseEvent($contact, $model, $this->getPageModel());
             $this->eventDispatcher->dispatch($event, ContactPersonEvents::CONTACT_PERSON_PARSE);
 
             $contact = $event->getContactPerson();

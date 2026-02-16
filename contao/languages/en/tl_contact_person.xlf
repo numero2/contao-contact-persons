@@ -4,147 +4,147 @@
 <body>
     <!-- ACTIONS -->
     <trans-unit id="tl_contact_person.import.0">
-        <target>Importieren</target>
+        <target>Import</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.import.1">
-        <target>Mehrere Ansprechpartner auf einmal importieren</target>
+        <target>Import multiple contact persons at once</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.edit">
-        <target>Ansprechpartner ID %s bearbeiten</target>
+        <target>Edit contact person ID %s</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.delete">
-        <target>Ansprechpartner ID %s löschen</target>
+        <target>Delete contact person ID %s</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.toggle">
-        <target>Ansprechpartner ID %s veröffentlichen/unveröffentlichen</target>
+        <target>Publish/unpublish contact person ID %s</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.show">
-        <target>Details des Ansprechpartner ID %s anzeigen</target>
+        <target>Show details of contact person ID %s</target>
     </trans-unit>
     <!-- LEGENDS -->
     <trans-unit id="tl_contact_person.common_legend">
-        <target>Allgemein</target>
+        <target>General</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.vcf_legend">
-        <target>VCF Datei</target>
+        <target>VCF File</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.source_legend">
-        <target>Bild</target>
+        <target>Image</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.page_legend">
-        <target>Seiten</target>
+        <target>Pages</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.publish_legend">
-        <target>Veröffentlichung</target>
+        <target>Publication</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_contact_person.title.0">
-        <target>Titel</target>
+        <target>Title</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.title.1">
-        <target>Bitte geben Sie den Titel ein.</target>
+        <target>Please enter the title.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.salutation.0">
-        <target>Anrede</target>
+        <target>Salutation</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.salutation.1">
-        <target>Bitte geben Sie die Anrede ein.</target>
+        <target>Please enter the salutation.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.firstname.0">
-        <target>Vorname</target>
+        <target>First name</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.firstname.1">
-        <target>Bitte geben Sie den Vornamen ein.</target>
+        <target>Please enter the first name.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.lastname.0">
-        <target>Nachname</target>
+        <target>Last name</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.lastname.1">
-        <target>Bitte geben Sie den Nachnamen ein.</target>
+        <target>Please enter the last name.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.position.0">
         <target>Position</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.position.1">
-        <target>Bitte geben Sie die Position ein.</target>
+        <target>Please enter the position.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.phone.0">
-        <target>Telefonnummer</target>
+        <target>Phone number</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.phone.1">
-        <target>Bitte geben Sie die Telefonnummer ein.</target>
+        <target>Please enter the phone number.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.fax.0">
-        <target>Faxnummer</target>
+        <target>Fax number</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.fax.1">
-        <target>Bitte geben Sie die Faxnummer ein.</target>
+        <target>Please enter the fax number.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.email.0">
-        <target>E-Mail-Adresse</target>
+        <target>Email address</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.email.1">
-        <target>Bitte geben Sie eine gültige E-Mail-Adresse ein.</target>
+        <target>Please enter a valid email address.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.street.0">
-        <target>Straße</target>
+        <target>Street</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.street.1">
-        <target>Bitte geben Sie den Straße ein.</target>
+        <target>Please enter the street.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.postal.0">
-        <target>Postleitzahl</target>
+        <target>Postal code</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.postal.1">
-        <target>Bitte geben Sie die Postleitzahl ein.</target>
+        <target>Please enter the postal code.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.city.0">
-        <target>Ort</target>
+        <target>City</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.city.1">
-        <target>Bitte geben Sie den Ort ein.</target>
+        <target>Please enter the city.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.generate_vcf.0">
-        <target>VCF Datei ausgeben</target>
+        <target>Generate VCF file</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.generate_vcf.1">
-        <target>Soll eine VCF Datei ausgegeben werden?</target>
+        <target>Should a VCF file be generated?</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.vcf_file.0">
-        <target>VCF Datei</target>
+        <target>VCF file</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.vcf_file.1">
-        <target>Bitte wählen Sie eine VCF Datei (leer lassen wenn die Datei generiert werden soll)</target>
+        <target>Please select a VCF file (leave empty to generate one)</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.singleSRC.0">
-        <target>Bild</target>
+        <target>Image</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.singleSRC.1">
-        <target>Bitte wählen Sie ein Bild aus.</target>
+        <target>Please select an image.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.pages.0">
-        <target>Seiten</target>
+        <target>Pages</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.pages.1">
-        <target>Bitte wählen Sie auf welchen Seiten diese Ansprechpartner angezeigt werden soll.</target>
+        <target>Please select the pages on which this contact person should be displayed.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.news.0">
-        <target>Nachrichten</target>
+        <target>News</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.news.1">
-        <target>Bitte wählen Sie bei welchen Nachrichten diese Ansprechpartner angezeigt werden soll.</target>
+        <target>Please select the news items on which this contact person should be displayed.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.events.0">
         <target>Events</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.events.1">
-        <target>Bitte wählen Sie auf bei welchen Events diese Ansprechpartner angezeigt werden soll.</target>
+        <target>Please select the events on which this contact person should be displayed.</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.published.0">
-        <target>Veröffentlichen</target>
+        <target>Publish</target>
     </trans-unit>
     <trans-unit id="tl_contact_person.published.1">
-        <target>Die Ansprechpartner auf der Webseite anzeigen.</target>
+        <target>Display the contact persons on the website.</target>
     </trans-unit>
 </body>
 </file>

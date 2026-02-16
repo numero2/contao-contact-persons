@@ -4,20 +4,20 @@
 <body>
     <!-- LEGENDS -->
     <trans-unit id="tl_content.contact_persons_legend">
-        <target>Ansprechpartner</target>
+        <target>Contact Person</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_content.contact_person.0">
-        <target>Ansprechpartner</target>
+        <target>Contact Person</target>
     </trans-unit>
     <trans-unit id="tl_content.contact_person.1">
-        <target>Bitte Wählen Sie den Ansprechpartner aus.</target>
+        <target>Please select a contact person.</target>
     </trans-unit>
     <trans-unit id="tl_content.contact_person_template.0">
-        <target>Ansprechpartner-Template</target>
+        <target>Contact Person Template</target>
     </trans-unit>
     <trans-unit id="tl_content.contact_person_template.1">
-        <target>Hier können Sie ein Ansprechpartner-Template auswählen.</target>
+        <target>Here you can select a contact person template.</target>
     </trans-unit>
 </body>
 </file>
