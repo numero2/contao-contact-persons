@@ -122,6 +122,12 @@
     <trans-unit id="tl_contact_person.singleSRC.1">
         <target>Please select an image.</target>
     </trans-unit>
+    <trans-unit id="tl_contact_person.jumpTo.0">
+        <target>Redirect page</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.jumpTo.1">
+        <target>Please choose the page to which visitors will be redirected when clicking on a contact person.</target>
+    </trans-unit>
     <trans-unit id="tl_contact_person.pages.0">
         <target>Pages</target>
     </trans-unit>

@@ -70,7 +70,7 @@ $GLOBALS['TL_DCA'][ContactPersonModel::getTable()] = [
     ]
 ,   'palettes' => [
         '__selector__'      => ['generate_vcf']
-    ,   'default'           => '{common_legend},title,salutation,firstname,lastname,position,phone,fax,email,street,postal,city,country;{vcf_legend},generate_vcf;{source_legend},singleSRC;{page_legend},pages;{publish_legend},published'
+    ,   'default'           => '{common_legend},title,salutation,firstname,lastname,position,phone,fax,email,street,postal,city,country;{vcf_legend},generate_vcf;{source_legend},singleSRC;{page_legend},jumpTo,pages;{publish_legend},published'
     ]
 ,   'subpalettes' => [
         'generate_vcf'                  => 'vcf_file'
@@ -173,6 +173,14 @@ $GLOBALS['TL_DCA'][ContactPersonModel::getTable()] = [
         ,   'eval'                  => ['multiple'=>true, 'fieldType'=>'checkbox', 'tl_class'=>'clr']
         ,   'sql'                   => "blob NULL"
         ,   'relation'              => ['type'=>'hasMany', 'load'=>'lazy']
+        ]
+    ,   'jumpTo' => [
+            'exclude'               => true
+        ,   'inputType'             => 'pageTree'
+        ,   'foreignKey'            => 'tl_page.title'
+        ,   'eval'                  => ['multiple'=>false, 'fieldType'=>'radio', 'tl_class'=>'clr']
+        ,   'sql'                   => 'int(10) unsigned NOT NULL default 0'
+        ,   'relation'              => ['type'=>'hasOne', 'load'=>'lazy']
         ]
     ,   'published' => [
             'exclude'               => true

@@ -19,6 +19,7 @@ use Contao\CoreBundle\Routing\ContentUrlGenerator;
 use Contao\FilesModel;
 use Contao\Input;
 use Contao\ModuleModel;
+use Contao\PageModel;
 use Contao\StringUtil;
 use Contao\System;
 use JeroenDesloovere\VCard\VCard;
@@ -148,6 +149,15 @@ class ContactPersonParseListener {
                     $contact['vcf'] = FilesModel::findByUuid($contact['vcf_file'])->path;
                 }
             }
+        }
+
+        // generate jumpTo href
+        if( $contact['jumpTo'] ) {
+
+            $target = PageModel::findById($contact['jumpTo']);
+            $href = $this->urlGenerator->generate($target, [], UrlGeneratorInterface::ABSOLUTE_URL);
+
+            $contact['href'] = $href;
         }
 
         $event->setContactPerson($contact);

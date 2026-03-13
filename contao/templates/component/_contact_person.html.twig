@@ -1,7 +1,9 @@
 {% use "@Contao/component/_figure.html.twig" %}
+{% trans_default_domain 'contao_default' %}
 
 {% block contact_person %}
     <div class="contact_person">
+
         {% if contact.title is not empty %}{{ contact.title }}<br>{% endif %}
         {% if contact.firstname is not empty %}{{ contact.firstname }} {% endif %}{{ contact.lastname }}<br>
         {% if contact.position is not empty %}{{ contact.position }}<br>{% endif %}
@@ -18,5 +20,10 @@
         {% if contact.vcf is defined %}
             <a href="{{contact.vcf}}">VCF</a>
         {% endif %}
+
+        {% if contact.href is defined %}
+            <a href="{{ contact.href }}">{{ 'MSC.more'|trans }}</a>
+        {% endif %}
+
     </div>
 {% endblock %}

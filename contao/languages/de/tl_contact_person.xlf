@@ -161,6 +161,14 @@
         <source>Please select an image.</source>
         <target>Bitte wählen Sie ein Bild aus.</target>
     </trans-unit>
+    <trans-unit id="tl_contact_person.jumpTo.0">
+        <source>Redirect page</source>
+        <target>Weiterleitungsseite</target>
+    </trans-unit>
+    <trans-unit id="tl_contact_person.jumpTo.1">
+        <source>Please choose the page to which visitors will be redirected when clicking on a contact person.</source>
+        <target>Bitte wählen Sie die Seite aus, zu der Besucher beim Anklicken einer Ansprechperson weitergeleitet werden.</target>
+    </trans-unit>
     <trans-unit id="tl_contact_person.pages.0">
         <source>Pages</source>
         <target>Seiten</target>
