@@ -65,12 +65,16 @@ class ContactPersonController extends AbstractContentElementController {
         foreach( $oContacts as $oContact ) {
 
             $contact = ContactPersonModel::findPublishedById($oContact);
-            $contact = $contact->row();
 
-            $event = new ContactPersonParseEvent($contact, $model, $this->getPageModel());
-            $this->eventDispatcher->dispatch($event, ContactPersonEvents::CONTACT_PERSON_PARSE);
+            if( $contact ) {
 
-            $contacts[] = $event->getContactPerson();
+                $contact = $contact->row();
+
+                $event = new ContactPersonParseEvent($contact, $model, $this->getPageModel());
+                $this->eventDispatcher->dispatch($event, ContactPersonEvents::CONTACT_PERSON_PARSE);
+
+                $contacts[] = $event->getContactPerson();
+            }
         }
 
         $template->set('contacts', $contacts);
